@@ -102,12 +102,12 @@ header {
 }
 
 header > img {
-  max-width: 150px;
-  width: 100%;
+  width: 150px;
+  height: auto;
 }
 
 .swiper-slide > img {
-  max-width: 800px;
+  max-width: 1300px;
   width: 100%;
 }
 
