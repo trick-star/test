@@ -9,8 +9,12 @@ header {
   padding:10px;
   background: rgb(139, 216, 248);
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-between;
+}
+
+header > img {
+  /* width: 150px; */
+  height: 30px;
 }
 
 /* ハンバーガー */
@@ -101,10 +105,7 @@ header {
   background-color: aqua;
 }
 
-header > img {
-  width: 150px;
-  height: auto;
-}
+
 
 .swiper-slide > img {
   max-width: 1000px;
