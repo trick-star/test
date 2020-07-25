@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
 #wrapper {
   width: 1300px;
   max-width: 100%;
@@ -105,8 +107,6 @@ header > img {
   background-color: aqua;
 }
 
-
-
 .swiper-slide > img {
   max-width: 1000px;
   width: 100%;
@@ -114,6 +114,39 @@ header > img {
 
 .swiper-container {
   text-align: center;
+}
+
+#top-image {
+  position: relative;
+}
+
+.custom-shape-divider-bottom-1595709435 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1595709435 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 149px;
+}
+
+.custom-shape-divider-bottom-1595709435 .shape-fill {
+  fill: #FFFFFF;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1595709435 svg {
+      width: calc(100% + 1.3px);
+      height: 158px;
+  }
 }
 
 @media screen and (min-width:480px) {
