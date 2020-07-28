@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -12,11 +13,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
   <body>
     <div id="wrapper">
       <header>
-        <img src="img/logo.png" alt="">
+        <a href="#top"><img src="img/logo.png" alt=""></a>
         <div id="nav-drawer">
             <input id="nav-input" type="checkbox" class="nav-unshown">
             <label id="nav-open" for="nav-input"><span></span></label>
@@ -32,8 +34,7 @@
         </div>
       </header>
       <section id="top-text">
-        <h1>my portfolio</h1>
-        <p></p>
+        <h1>My<br>Portfolio</h1>
       </section>
       <section id="top-image">
         <!-- Slider main container -->
@@ -54,14 +55,11 @@
           <div class="swiper-button-next"></div>
         </div>
       </section>
-      <!-- <img src="img/top001.jpg" alt=""> -->
-      <section class="slider">
-        <div class="custom-shape-divider-bottom-1595709391">
-          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
-          </svg>
-        </div>
+      <section id="overview"> 
+        <p class="jp scroll">当サイトは<br>デザイン性より<br>機能性重視で<br>ご覧頂けると幸いです。</p>
+        <p class="en">We hope that<br>you can view this site<br>with more emphasis<br>on functionality<br>than design.</p>
       </section>
+      
     </wrapper>
     <script type="text/javascript" src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
@@ -80,6 +78,8 @@
           }
         }
       })
+
+      ScrollReveal().reveal('.scroll');
     </script>
   </body>
 </html>
