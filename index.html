@@ -6,6 +6,7 @@
     <title></title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -13,7 +14,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      $(function(){
+        $(window).scroll(function (){
+         $('.effect-fade').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+                $(this).addClass('effect-scroll');
+            }
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="wrapper">
@@ -56,8 +71,15 @@
         </div>
       </section>
       <section id="overview"> 
-        <p class="jp scroll">当サイトは<br>デザイン性より<br>機能性重視で<br>ご覧頂けると幸いです。</p>
-        <p class="en">We hope that<br>you can view this site<br>with more emphasis<br>on functionality<br>than design.</p>
+        <p class="jp effect-fade">当サイトは</p>
+        <p class="jp effect-fade">デザイン性より</p>
+        <p class="jp effect-fade">機能性重視で</p>
+        <p class="jp effect-fade">ご覧頂けると幸いです。</p>
+        <p class="en effect-fade">We hope that</p>
+        <p class="en effect-fade">you can view this site</p>
+        <p class="en effect-fade">with more emphasis</p>
+        <p class="en effect-fade">on functionality</p>
+        <p class="en effect-fade">than design.</p>
       </section>
       
     </wrapper>
@@ -79,7 +101,7 @@
         }
       })
 
-      ScrollReveal().reveal('.scroll');
+      
     </script>
   </body>
 </html>
