@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>My Portfolio</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script>
       $(function(){
         $(window).scroll(function (){
@@ -28,7 +30,21 @@
           });
         });
       });
+
+      $(function(){
+          var setImg = '#photo';
+          var fadeSpeed = 1600;
+          var switchDelay = 5000;
+      
+          $(setImg).children('img').css({opacity:'0'});
+          $(setImg + ' img:first').stop().animate({opacity:'1',zIndex:'20'},fadeSpeed);
+      
+          setInterval(function(){
+              $(setImg + ' :first-child').animate({opacity:'0'},fadeSpeed).next('img').animate({opacity:'1'},fadeSpeed).end().appendTo(setImg);
+          },switchDelay);
+      });
     </script>
+      
   </head>
   <body>
     <div id="wrapper">
@@ -51,9 +67,26 @@
       <section id="top-text">
         <h1>My<br>Portfolio</h1>
       </section>
+
+      <section id="photo">
+       <img src="img/top001.jpg" alt="">
+       <img src="img/top002.jpg" alt="">
+       <img src="img/top003.jpg" alt="">
+      </section>
+      <section id="overview"> 
+        <p class="jp effect-fade">当サイトは</p>
+        <p class="jp effect-fade">デザイン性より</p>
+        <p class="jp effect-fade">機能性重視で</p>
+        <p class="jp effect-fade">ご覧頂けると幸いです。</p>
+        <p class="en effect-fade">We hope that</p>
+        <p class="en effect-fade">you can view this site</p>
+        <p class="en effect-fade">with more emphasis</p>
+        <p class="en effect-fade">on functionality</p>
+        <p class="en effect-fade">than design.</p>
+      </section>
       <section id="top-image">
         <!-- Slider main container -->
-        <div class="swiper-container">
+        <div class="swiper-container effect-fade">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
               <!-- Slides -->
@@ -70,17 +103,9 @@
           <div class="swiper-button-next"></div>
         </div>
       </section>
-      <section id="overview"> 
-        <p class="jp effect-fade">当サイトは</p>
-        <p class="jp effect-fade">デザイン性より</p>
-        <p class="jp effect-fade">機能性重視で</p>
-        <p class="jp effect-fade">ご覧頂けると幸いです。</p>
-        <p class="en effect-fade">We hope that</p>
-        <p class="en effect-fade">you can view this site</p>
-        <p class="en effect-fade">with more emphasis</p>
-        <p class="en effect-fade">on functionality</p>
-        <p class="en effect-fade">than design.</p>
-      </section>
+      <footer>
+        My Portfolio
+      </footer>
       
     </wrapper>
     <script type="text/javascript" src="script.js"></script>
@@ -88,13 +113,15 @@
     <script>
       /* TOPスライダー */
       var mySwiper = new Swiper ('.swiper-container', {
-        effect: "flip",
         loop: true,
+        slidesPerView: 2,
+        spaceBetween: 10,
+        centeredSlides : true,
         pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         breakpoints: {
-          700: {
+          740: {
             slidesPerView: 1,
             spaceBetween: 0
           }
