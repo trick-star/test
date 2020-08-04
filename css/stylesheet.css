@@ -15,6 +15,7 @@ header {
   display: flex;
   justify-content: space-between;
   position: fixed;
+  align-items: center;
   z-index: 60;
 }
 
@@ -111,23 +112,20 @@ header > a >img {
   background-color: aqua;
 }
 
+#top-text {
+  display: flex;
+  justify-content: center;
+}
 
 #top-text h1 {
   position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
   z-index: 50;
   font-family: 'Kaushan Script', cursive;
   font-size: 65px;
   color: #c53578;
-  padding: 60px;
+  padding-top: 80px;
   text-shadow: 10px 10px rgba(0,0,139,0.1);
   text-align: center;
-  
-  
 }
 
 /* ふわっと画像 */
@@ -212,6 +210,33 @@ footer {
 
 @media screen and (min-width:740px) {
     #nav-open {
-      display:none;
+      display: none;
     }
+
+    #nav-content {
+      display: contents;
+    }
+
+    .menu_list {
+      display: flex;
+
+    }
+
+    .menu_index {
+      margin: 0;
+      font-size: 16px;
+      background: rgb(177, 250, 216)
+    }
+
+    #top-text {
+      display: block;
+    }
+    
+    #top-text h1 {
+      position: absolute;
+      font-size: 78px;
+      padding-top: 100px;
+      padding-left: 80px;
+    }
+
   }
